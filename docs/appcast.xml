@@ -4,11 +4,11 @@
         <title>Embark</title>
         <item>
             <title>1.1</title>
-            <pubDate>Sat, 08 Aug 2026 14:43:11 +0800</pubDate>
+            <pubDate>Tue, 29 Sep 2026 22:36:00 +0800</pubDate>
             <sparkle:version>3</sparkle:version>
             <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/xenroam/Embark/releases/download/v1.1/Embark-1.1.dmg" length="7427773" type="application/octet-stream"/>
+            <enclosure url="https://github.com/xenroam/Embark/releases/download/v1.1/Embark-1.1.dmg" length="8067284" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>
