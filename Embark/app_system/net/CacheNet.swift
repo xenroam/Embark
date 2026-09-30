@@ -58,6 +58,8 @@ class CacheNet {
       throw CacheNetError.invalidURL
     }
     let config = URLSessionConfiguration.default
+    config.requestCachePolicy = .reloadIgnoringLocalCacheData
+    config.urlCache = nil
     config.timeoutIntervalForRequest = 30
     config.timeoutIntervalForResource = 30
     let session = URLSession(configuration: config)

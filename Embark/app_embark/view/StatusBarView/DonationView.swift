@@ -6,9 +6,13 @@ struct DonationView: View {
 
   private func openDonationPage() {
     DefineManager.GetDonateUrl { result in
-      guard case .success(let donateUrl) = result,
-            let url = URL(string: donateUrl) else { return }
-      NSWorkspace.shared.open(url)
+      switch result {
+      case .failure(let error):
+        Debug.print("Failed to get donate url: \(error)")
+      case .success(let donateUrl):
+        guard let url = URL(string: donateUrl.trimmingCharacters(in: .whitespacesAndNewlines)) else { return }
+        NSWorkspace.shared.open(url)
+      }
     }
   }
 
