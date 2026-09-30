@@ -26,15 +26,15 @@ class DefineManager: ObservableObject {
     }
   }
 
-  static func GetSponsorUrl(completion: @escaping (Result<String, Error>) -> Void) {
+  static func GetDonateUrl(completion: @escaping (Result<String, Error>) -> Void) {
     GetEmbarkJson { result in
       switch result {
       case .success(let json):
-        if let sponsorUrl = json["Sponsor"]["Url"].string ?? json["Sponsor"].string {
-          completion(.success(sponsorUrl))
+        if let donateUrl = json["Donate"]["Url"].string ?? json["Donate"].string {
+          completion(.success(donateUrl))
           return
         }
-        let error = NSError(domain: "Embark", code: -1, userInfo: [NSLocalizedDescriptionKey: "Sponsor URL not found in embark.json"])
+        let error = NSError(domain: "Embark", code: -1, userInfo: [NSLocalizedDescriptionKey: "Donate URL not found in embark.json"])
         completion(.failure(error))
       case .failure(let error):
         completion(.failure(error))
